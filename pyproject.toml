@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "flow"
+version = "20.11.0"
+description = ""
+authors = ["Aris <pikeas@gmail.com>"]
+
+[tool.poetry.scripts]
+flow = "flow.cli:app"
+
+[tool.poetry.dependencies]
+httpx = "^0.16.1"
+python = "^3.8"
+typer = "^0.3.2"
+pydantic = "^1.7.2"
+
+[tool.poetry.dev-dependencies]
+better_exceptions = "^0.2.2"
+black = "^20.8b1"
+ipython = "^7.19.0"
+isort = "^5.6.4"
+# mypy or pyre-check or pyright
+mypy = "^0.790"
+pre-commit = "^2.9.2"
+pytest = "^6.1.2"
+coverage = {extras = ["toml"], version = "^5.3"}
+ipykernel = "^5.3.4"
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+force-exclude = '''
+/(
+  | \.venv
+)/
+'''
+
+
+[tool.coverage.run]
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

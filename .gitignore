@@ -1,0 +1,11 @@
+.DS_Store
+.coverage
+.envrc
+.mypy_cache/
+.pytest_cache/
+.venv/
+.vscode/
+
+__pycache__/
+*.egg-info/
+tmp/
